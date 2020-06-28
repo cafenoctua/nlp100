@@ -18,5 +18,7 @@ RUN pip install xgboost
 RUN pip install --upgrade gensim
 RUN apt-get install -y unzip
 RUN conda install -y pytorch==1.2.0 torchvision==0.4.0 cpuonly -c pytorch
+RUN apt install -y mecab libmecab-dev mecab-ipadic-utf8
+RUN pip install mecab-python3
 WORKDIR /
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''", "--NotebookApp.iopub_data_rate_limit=1e10"]
